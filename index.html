@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>انضم إلى مجموعة واتساب</title>
+
+  <style>
+    :root{
+      --bg1:#f0f5f9;
+      --bg2:#eef7ee;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --whatsapp:#25D366;
+      --accent:#0b8450;
+      --glass: rgba(255,255,255,0.6);
+      --radius:18px;
+      --shadow: 0 6px 24px rgba(12, 12, 12, 0.08);
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Segoe UI", Tahoma, "Helvetica Neue", Arial, system-ui, sans-serif;
+      background: linear-gradient(135deg,var(--bg1),var(--bg2));
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      color:#111827;
+      direction:rtl;
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      box-sizing:border-box;
+    }
+
+    .card{
+      width:100%;
+      max-width:900px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--card));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:36px;
+      display:flex;
+      gap:28px;
+      align-items:center;
+      box-sizing:border-box;
+      overflow:hidden;
+    }
+
+    .left {
+      flex:1 1 420px;
+      min-width:240px;
+    }
+
+    .logo {
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .logo .icon{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--whatsapp),var(--accent));
+      display:inline-grid;
+      place-items:center;
+      box-shadow: 0 6px 18px rgba(37,211,102,0.18);
+      color:#fff;
+      font-weight:700;
+    }
+
+    h1{
+      margin:0 0 8px 0;
+      font-size:26px;
+      line-height:1.15;
+    }
+
+    p.lead{
+      margin:0 0 20px 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* button */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      background:linear-gradient(90deg,var(--whatsapp),#1ebe57);
+      color:#fff;
+      border:none;
+      padding:14px 20px;
+      border-radius:12px;
+      font-size:18px;
+      text-decoration:none;
+      cursor:pointer;
+      box-shadow: 0 8px 28px rgba(37,211,102,0.14);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:active{ transform:translateY(1px) scale(.998); }
+    .btn:focus{ outline:3px solid rgba(37,211,102,0.18); outline-offset:3px; }
+
+    .btn .svg{
+      width:22px;
+      height:22px;
+      display:inline-block;
+    }
+
+    /* right panel */
+    .right{
+      width:320px;
+      min-width:220px;
+      background: linear-gradient(180deg, rgba(11,132,80,0.05), rgba(11,132,80,0.02));
+      border-radius:12px;
+      padding:18px;
+      box-sizing:border-box;
+      text-align:center;
+    }
+    .right p{
+      margin:0 0 12px 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .small{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    footer.note{
+      margin-top:18px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* responsive */
+    @media (max-width:720px){
+      .card{ flex-direction:column; padding:22px; gap:18px; }
+      .right{ width:100%; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="region" aria-label="دعوة مجموعة واتساب">
+      <div class="left">
+        <div class="logo" aria-hidden="true">
+          <div class="icon">و</div>
+          <div>
+            <div style="font-weight:600">مجموعة واتساب</div>
+            <div style="font-size:13px;color:var(--muted)">انضم لأعضاء المجموعة وشارك المحتوى</div>
+          </div>
+        </div>
+
+        <h1>انضم إلى مجموعتنا الآن</h1>
+        <p class="lead">اضغط الزر أدناه لفتح الدعوة مباشرة في تطبيق واتساب أو في المتصفح حسب جهازك. تم تصميم الصفحة لتعمل على الأجهزة المحمولة وسطح المكتب.</p>
+
+        <div>
+          <button id="joinBtn" class="btn" aria-label="انضم إلى مجموعة واتساب" title="انضم إلى مجموعة واتساب" type="button">
+            <!-- simple whatsapp svg -->
+            <svg class="svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M21.7 19.3a11.9 11.9 0 10-3.4 3.4l2.5.5.4-2.8z" fill="#fff" opacity=".06"/>
+              <path d="M20.52 3.48A11.9 11.9 0 0012 0C5.373 0 .02 5.354.02 12 0 14.21.64 16.29 1.81 18.05L0 24l6.16-1.62A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12 0-2.99-1.06-5.74-2.96-7.52z" fill="#fff" opacity=".06"/>
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.473-.148-.673.15-.2.297-.773.967-.947 1.165-.174.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.476-.883-.788-1.48-1.41-1.654-1.708-.174-.297-.018-.458.13-.606.134-.132.297-.347.446-.52.149-.174.198-.298.298-.497.1-.198.05-.372-.025-.52-.075-.149-.673-1.62-.922-2.22-.244-.573-.492-.495-.673-.505l-.574-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.48 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487 0 0 .397.167.717.09.32-.074 1.01-.41 1.154-.807.149-.397.149-.74.105-.807-.044-.066-.198-.099-.446-.248z" fill="#fff"/>
+            </svg>
+            انضم للمجموعة الآن
+          </button>
+        </div>
+
+        <footer class="note">في حال لم يُفتح التطبيق، سيتم تحويلك إلى صفحة الويب لعرض الدعوة.</footer>
+      </div>
+
+      <aside class="right" aria-hidden="true">
+        <p><strong>رمز المجموعة</strong></p>
+        <div id="groupCodeDisplay" style="font-size:18px;font-weight:600;margin-bottom:8px;color:var(--accent)">GDua6Q2BMHoHjgMudafBMI</div>
+        <p class="small">سيتم فتح الرابط مباشرة في تطبيق واتساب إذا كان مثبتًا. يعمل هذا أيضاً على الأجهزة المكتبية بفتح واجهة الويب الخاصة بواتساب.</p>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    // 🔹 Get the group ID from the URL (e.g., ?groupid=ABCD123)
+    const params = new URLSearchParams(window.location.search);
+    const groupCode = params.get('groupid') || 'DjzZhd60uaX6LiKCnV9oXE'; // fallback default if not provided
+
+    // 🔹 Build WhatsApp URLs dynamically
+    const webUrl = 'https://chat.whatsapp.com/' + groupCode;
+    const intentUrl = 'intent://chat.whatsapp.com/' + groupCode + '#Intent;package=com.whatsapp;scheme=https;end';
+    const joinBtn = document.getElementById('joinBtn');
+
+    // 🔹 Update the group code text on the right panel
+    const codeEl = document.querySelector('.right div');
+    if (codeEl) codeEl.textContent = groupCode;
+
+    // 🔹 Device detection helpers
+    function isiOS() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
+    function isAndroid() {
+      return /Android/.test(navigator.userAgent);
+    }
+
+    // 🔹 Handle button click
+    joinBtn.addEventListener('click', function () {
+      if (isAndroid()) {
+        // Android → try intent first, then fallback
+        window.location.href = intentUrl;
+        setTimeout(function(){ window.open(webUrl, '_blank'); }, 1200);
+      } else if (isiOS()) {
+        // iOS → use https link (opens in app if installed)
+        window.location.href = webUrl;
+      } else {
+        // Desktop → open in new tab
+        window.open(webUrl, '_blank', 'noopener,noreferrer');
+      }
+    });
+
+    // 🔹 Keyboard accessibility
+    joinBtn.addEventListener('keyup', function(e){
+      if (e.key === 'Enter' || e.key === ' ') joinBtn.click();
+    });
+  })();
+</script>
+
+</body>
+</html>
